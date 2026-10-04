@@ -38,87 +38,88 @@ La ROM original compatible utilizada para este proyecto tiene el siguiente MD5:
 5bd1fe107bf8106b2ab6650abecd54d6
 
 ---
-
 # Instalación paso a paso
 
-## 1. Instalar primero oot-PSP
+## 1. Tener oot-PSP instalado y funcionando
 
-Descarga e instala primero el port original de oot-PSP siguiendo las
-instrucciones de su desarrollador.
+Este tutorial asume que ya instalaste correctamente el port original
+de Ocarina of Time para PSP de z2442 y que lo ejecutaste al menos una vez.
 
-Debes tener una instalación funcional antes de utilizar este parcheador.
+Esto es necesario porque oot-PSP genera durante su primer inicio archivos
+que necesitaremos para crear la versión española.
 
-La carpeta del port tendrá una estructura similar a:
+Antes de modificar nada, recomiendo hacer una copia de seguridad de:
 
-OOTPSP/
-├── EBOOT.PBP
-├── data/
-└── otros archivos del port
+EBOOT.PBP
 
----
-
-## 2. Iniciar oot-PSP al menos una vez
-
-Coloca tu ROM original USA NTSC-U 1.0 en el lugar indicado por oot-PSP y
-arranca el port normalmente.
-
-La ROM original debe llamarse:
-
-baserom.z64
-
-La primera vez que se inicia oot-PSP, el port utiliza esa ROM para extraer
-y generar los archivos que necesita.
-
-Es importante completar este paso antes de utilizar el parcheador español.
-
-Después del primer inicio debe existir el archivo:
+y:
 
 data/segments/oot_psp_assets.bin
 
-Este archivo es necesario para crear la versión española.
-
-Si `oot_psp_assets.bin` todavía no existe, inicia primero el port original
-con la ROM limpia.
+La ROM `baserom.z64` de tu instalación original NO necesita modificarse.
 
 ---
 
-## 3. Preparar una ROM en castellano
+## 2. Archivos necesarios
 
-Necesitas otra copia de Ocarina of Time basada exactamente en:
+Para utilizar el parcheador necesitas:
 
-Ocarina of Time USA NTSC-U 1.0
+- OoT_PSP_ES_Patcher.exe
+- baserom.z64
+- oot-ntsc-1.0.z64
+- EBOOT.PBP
+- oot_psp_assets.bin
 
-A esa segunda ROM debes aplicarle una traducción al castellano compatible.
+### baserom.z64
 
-No importa si tú mismo aplicaste el parche o si ya dispones de una copia
-traducida compatible.
+Debe ser una ROM limpia de:
 
-Lo importante es que la ROM española esté basada en la misma versión
-USA NTSC-U 1.0.
+The Legend of Zelda: Ocarina of Time USA NTSC-U 1.0
 
-Para utilizar este parcheador, temporalmente renombra la ROM traducida como:
+Esta es la misma ROM utilizada originalmente para instalar y ejecutar oot-PSP.
 
-oot-ntsc-1.0.z64
+MD5:
+
+5bd1fe107bf8106b2ab6650abecd54d6
+
+### oot-ntsc-1.0.z64
+
+Debe ser una ROM basada en la MISMA versión USA NTSC-U 1.0,
+pero ya traducida al castellano.
+
+Esta ROM solamente se utiliza como fuente para extraer los textos y
+otros datos necesarios.
+
+NO sustituye a `baserom.z64` dentro de oot-PSP.
+
+---
+
+## 3. Obtener los archivos desde oot-PSP
+
+Desde tu instalación funcional de oot-PSP copia:
+
+EBOOT.PBP
+
+Este archivo se encuentra en la carpeta principal del port.
+
+También copia:
+
+data/segments/oot_psp_assets.bin
+
+Este archivo se genera después de haber iniciado correctamente oot-PSP
+al menos una vez.
+
+Si todavía no existe, inicia primero el port original.
 
 ---
 
 ## 4. Preparar la carpeta del parcheador
 
-Crea una carpeta nueva en tu PC.
-
-Por ejemplo:
+Crea una carpeta nueva en tu PC, por ejemplo:
 
 OOT_PSP_ES
 
-Dentro de ella coloca:
-
-OoT_PSP_ES_Patcher.exe
-baserom.z64
-oot-ntsc-1.0.z64
-EBOOT.PBP
-oot_psp_assets.bin
-
-La carpeta debe quedar así:
+Dentro coloca:
 
 OOT_PSP_ES/
 ├── OoT_PSP_ES_Patcher.exe
@@ -127,68 +128,44 @@ OOT_PSP_ES/
 ├── EBOOT.PBP
 └── oot_psp_assets.bin
 
-### Qué es cada archivo
+Donde:
 
-`OoT_PSP_ES_Patcher.exe`
+baserom.z64
+= ROM limpia USA NTSC-U 1.0
 
-Es el parcheador de este proyecto.
+oot-ntsc-1.0.z64
+= ROM de la misma versión ya traducida al castellano
 
-`baserom.z64`
+EBOOT.PBP
+= archivo copiado desde tu instalación funcional de oot-PSP
 
-Es la ROM ORIGINAL y limpia de Ocarina of Time USA NTSC-U 1.0.
-
-`oot-ntsc-1.0.z64`
-
-Es la ROM de la MISMA versión, pero ya traducida al castellano.
-
-`EBOOT.PBP`
-
-Debes copiarlo desde tu instalación funcional de oot-PSP.
-
-Se encuentra en la carpeta principal del port:
-
-OOTPSP/EBOOT.PBP
-
-`oot_psp_assets.bin`
-
-Debes copiarlo desde la instalación de oot-PSP después de haber iniciado
-el port al menos una vez.
-
-Se encuentra en:
-
-OOTPSP/data/segments/oot_psp_assets.bin
+oot_psp_assets.bin
+= archivo generado por oot-PSP durante el primer inicio
 
 ---
 
 ## 5. Ejecutar el parcheador
 
-Con los cinco archivos dentro de la misma carpeta, ejecuta:
+Ejecuta:
 
 OoT_PSP_ES_Patcher.exe
 
-El programa comprobará los archivos y realizará automáticamente las
-modificaciones necesarias.
+El programa utilizará la ROM limpia como referencia y la ROM española
+como fuente de los textos necesarios.
 
-El parcheador NO modifica tus archivos originales.
+Los archivos originales no se modifican.
 
-Cuando termine correctamente aparecerá una nueva carpeta:
-
-salida_es
-
-Dentro encontrarás:
+Si todo es correcto aparecerá:
 
 salida_es/
 ├── EBOOT.PBP
 └── oot_psp_assets.bin
 
-Estos son los archivos modificados que utilizará oot-PSP para mostrar
-los diálogos en castellano.
-
 ---
 
-## 6. Sustituir los archivos del port
+## 6. Instalar los archivos españoles
 
-Haz una copia de seguridad de tu instalación original antes de continuar.
+Haz primero una copia de seguridad de los archivos originales.
 
 Copia:
 
@@ -206,115 +183,44 @@ y reemplaza:
 
 OOTPSP/data/segments/oot_psp_assets.bin
 
-La estructura final debe incluir:
-
-OOTPSP/
-├── EBOOT.PBP
-└── data/
-    └── segments/
-        └── oot_psp_assets.bin
-
 ---
 
-## 7. ROM utilizada por el port
+## 7. NO sustituir baserom.z64
 
-Una vez terminado todo el proceso, la ROM que vayas a dejar en la carpeta
-del port debe utilizar el nombre esperado por oot-PSP:
+La ROM original:
 
 baserom.z64
 
-Si estás utilizando la ROM traducida al castellano dentro de tu instalación
-final, renómbrala nuevamente como:
+debe permanecer exactamente como estaba en tu instalación original de oot-PSP.
 
-baserom.z64
+NO necesitas copiar la ROM española a la PSP.
 
-No la dejes con el nombre temporal:
+NO necesitas renombrar la ROM española como `baserom.z64`.
 
-oot-ntsc-1.0.z64
+La ROM española únicamente se utiliza durante el proceso de creación de
+los archivos modificados.
 
-Ese nombre solamente se utiliza para que el parcheador pueda distinguir
-entre la ROM original y la ROM traducida mientras genera los archivos.
+Por tanto, al terminar solamente debes reemplazar:
+
+EBOOT.PBP
+
+y:
+
+data/segments/oot_psp_assets.bin
+
+Todo lo demás puede permanecer igual.
 
 ---
 
-## 8. Iniciar el juego
+## 8. Ejecutar oot-PSP
 
-Copia la carpeta del port nuevamente a tu PSP si trabajaste desde el PC.
+Inicia el port normalmente.
 
-Inicia oot-PSP normalmente.
-
-El menú inicial puede continuar apareciendo en inglés.
+El menú principal puede continuar apareciendo en inglés.
 
 Esto es normal.
 
 Los diálogos dentro del juego deberían aparecer en castellano.
-
----
-
-# Resumen rápido
-
-Primero:
-
-1. Instala oot-PSP.
-2. Coloca una ROM limpia USA NTSC-U 1.0 como `baserom.z64`.
-3. Inicia el port una vez.
-4. Espera a que genere `oot_psp_assets.bin`.
-
-Después copia al PC:
-
-- `EBOOT.PBP`
-- `data/segments/oot_psp_assets.bin`
-
-Prepara también:
-
-- ROM limpia -> `baserom.z64`
-- ROM castellana -> `oot-ntsc-1.0.z64`
-
-Coloca todo junto a:
-
-`OoT_PSP_ES_Patcher.exe`
-
-Ejecuta el parcheador.
-
-Finalmente reemplaza en oot-PSP:
-
-`EBOOT.PBP`
-
-y:
-
-`data/segments/oot_psp_assets.bin`
-
-por las versiones creadas dentro de:
-
-`salida_es`
-
-Si la ROM castellana va a permanecer en la instalación final del port,
-renómbrala nuevamente como:
-
-`baserom.z64`
-
----
-
-# Archivos que NO debes borrar
-
-No borres:
-
-data/segments/oot_psp_assets.bin
-
-después de haber instalado la versión española.
-
-Si el port vuelve a generar este archivo utilizando la ROM original,
-los recursos volverán a ser los originales y perderás los diálogos
-modificados.
-
-Conserva además una copia de seguridad de:
-
-EBOOT.PBP
-oot_psp_assets.bin
-
-originales.
-
----
 
 # Compatibilidad
 
@@ -333,9 +239,6 @@ oot_psp_assets.bin y hacer necesario actualizar este parcheador.
 Si una versión futura del port deja de funcionar con este parcheador,
 prueba primero con la versión de oot-PSP para la que fue publicada esta
 versión del parcheador.
-
-(por si llega a quedar alguna duda, el baserom, es el rom virgen que usa el port y que incluye al instalarlo, es necesario renombrar la rom parcheada resultante de la traducción y el baserom, ya que así lo detecta el port. Lo renombramos como el rom virgen porque se busca explícitamente ese archivo, asi que rom parcheada (renombrar a "baserom" y conviene guardar el baserom anterior por si acaso).
-Rom español + baserom = rom parcheada (se debe renombrar como baserom)
 
 ## Credits & Attributions / Créditos
 
