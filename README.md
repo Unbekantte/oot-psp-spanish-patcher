@@ -5,7 +5,7 @@ Leeme
 
 Parcheador no oficial para utilizar la traducción castellana de
 The Legend of Zelda: Ocarina of Time con el port nativo oot-PSP.
-
+Puedes encontrar el port aqui: https://github.com/z2442/oot-PSP
 ## Qué hace
 
 Este programa adapta los diálogos castellanos de una ROM ya traducida
