@@ -1,6 +1,4 @@
-# oot-psp-spanish-patcher
-Patcher to use the Spanish translation of The Legend of Zelda: Ocarina of Time with oot-PSP.
-Leeme
+
 # Ocarina of Time PSP - Spanish Patcher
 
 Parcheador no oficial para utilizar la traducción castellana de
@@ -107,11 +105,16 @@ Como oot-PSP continúa en desarrollo, futuras versiones podrían cambiar
 la disposición interna de los archivos y requerir una actualización
 de este parcheador.
 
-## Créditos
+## Credits & Attributions / Créditos
 
-- oot-PSP: z2442 y colaboradores
-- ZeldaRET / oot: proyecto de decompilación de Ocarina of Time
-- Traducción castellana: Blade133bo
+This translation patcher is an external utility and relies heavily on the amazing work of the Zelda emulation and decompilation community. 
+
+* **Spanish Translation Text:** Created by **Blade133bo / Navibyte** (All text and asset localization rights belong to them).
+* **PSP Native Port:** Developed by [z2442](https://github.com/z2442) and all the [oot-PSP contributors](https://github.com).
+* **Ocarina of Time Decompilation:** Brought to life by the [ZeldaRET project](https://github.com/zeldaret/oot).
+
+*Disclaimer: This tool does not distribute any copyrighted game files or ROMs. Users must supply their own legal assets to perform the compilation/patching process.*
+
 - Adaptación de la traducción al port PSP: este proyecto
 
 Este proyecto no está afiliado con Nintendo, ZeldaRET, oot-PSP ni con
